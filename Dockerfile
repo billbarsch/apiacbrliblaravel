@@ -65,18 +65,18 @@ RUN mkdir -p /usr/local/gcloud \
     && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
     && "N" "n" | /usr/local/gcloud/google-cloud-sdk/install.sh
 
-FROM apiacbrliblaraveldev as apiacbrliblaravelprod
-#copia todos os arquivos para dentro da imagem
-COPY . /var/www/html
-#copia php.ini para configuração
-#RUN rm /usr/local/etc/php/php.ini
-#RUN mv /var/www/html/php.ini /usr/local/etc/php/php.ini
-#copia o .env de producao
-#RUN mv /var/www/html/producao.env /var/www/html/.env
-#copia o config.json de producao
-#RUN mv /var/www/html/public/config.json.producao /var/www/html/public/config.json
-RUN composer install --no-dev --no-interaction
-RUN php artisan config:cache
-#RUN php artisan route:cache
-RUN php artisan view:cache
-RUN chown -R www-data:www-data /var/www/html/storage
+##FROM apiacbrliblaraveldev as apiacbrliblaravelprod
+###copia todos os arquivos para dentro da imagem
+##COPY . /var/www/html
+###copia php.ini para configuração
+###RUN rm /usr/local/etc/php/php.ini
+###RUN mv /var/www/html/php.ini /usr/local/etc/php/php.ini
+###copia o .env de producao
+###RUN mv /var/www/html/producao.env /var/www/html/.env
+###copia o config.json de producao
+###RUN mv /var/www/html/public/config.json.producao /var/www/html/public/config.json
+##RUN composer install --no-dev --no-interaction
+##RUN php artisan config:cache
+###RUN php artisan route:cache
+##RUN php artisan view:cache
+##RUN chown -R www-data:www-data /var/www/html/storage
