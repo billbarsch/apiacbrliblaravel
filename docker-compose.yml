@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  dev:
+    build: .
+    container_name: dev
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/html
+    networks:
+      backend:
+        aliases:
+          - dev
+
+networks:
+  backend:
+    name: apiacbrliblaravelnetwork
