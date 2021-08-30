@@ -2,7 +2,7 @@
     "name": "apiacbrliblaravel",
     "workspaceFolder": "/var/www/html",
     "dockerComposeFile": "../docker-compose.yml",
-    "service": "dev",
+    "service": "apiacbrliblaraveldev",
     "extensions": [
         "coenraads.bracket-pair-colorizer",
         "gerane.theme-dark-dracula",

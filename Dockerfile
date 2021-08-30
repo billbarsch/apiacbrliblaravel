@@ -1,4 +1,4 @@
-FROM php:7.4-apache AS maisagildev
+FROM php:7.4-apache AS apiacbrliblaraveldev
 RUN apt-get update
 # 1. development packages
 RUN apt-get install -y \
@@ -65,7 +65,7 @@ RUN mkdir -p /usr/local/gcloud \
     && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
     && "N" "n" | /usr/local/gcloud/google-cloud-sdk/install.sh
 
-FROM dev as apiacbrliblaravelprod
+FROM apiacbrliblaraveldev as apiacbrliblaravelprod
 #copia todos os arquivos para dentro da imagem
 COPY . /var/www/html
 #copia php.ini para configuração
